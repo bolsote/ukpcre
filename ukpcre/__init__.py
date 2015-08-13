@@ -1,7 +1,7 @@
 import re
 
 
-ukpcre = r"""
+_ukpcre = r"""
     ^(?P<postcode>
         (?P<girobank>gir\s*0aa) |                            # Girobank.
         (
@@ -14,4 +14,4 @@ ukpcre = r"""
     )$
 """
 
-pattern = re.compile(ukpcre, re.IGNORECASE | re.VERBOSE)
+pattern = re.compile(_ukpcre, re.IGNORECASE | re.VERBOSE)

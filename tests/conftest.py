@@ -58,11 +58,19 @@ class DataGenerator:
 
 
 def pytest_generate_tests(metafunc):
-    gen = DataGenerator(metafunc.cls.postcodes)
+    if metafunc.cls:
+        gen = DataGenerator(metafunc.cls.postcodes)
 
-    metafunc.parametrize(
-        'data,postcode,first,second',
-        list(gen.generate_data()),
-        ids=list(gen.generate_ids()),
-        scope='class'
-    )
+        metafunc.parametrize(
+            'data,postcode,first,second',
+            list(gen.generate_data()),
+            ids=list(gen.generate_ids()),
+            scope='class'
+        )
+
+
+def pytest_addoption(parser):
+    parser.addoption(
+        "--osdb",
+        action="store_true",
+        help="Run against OS postcode database")

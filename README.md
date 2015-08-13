@@ -44,6 +44,11 @@ The final section of the full postcode sub-expression, `([0-9](?![cikmov])[a-z]{
 ## Testing.
 A test suite is provided, with cases to match all of the cases mentioned, including character exclusions. It can be run using [py.test](http://pytest.org).
 
+### Testing agains OS database.
+A script and a test generator is provided for testing against the Ordnance Survey Code-Point Open postcode database. This database can't be provided with the code, though, but can be obtained through the [official channels](https://www.ordnancesurvey.co.uk/opendatadownload/products.html).
+
+Once the database has been obtained, the ZIP file can be decompressed under the `tests/data/` directory, and the script `tests/prepare_os_data.py` will generate the postcode database for you. If the test suite is run using the `--osdb` command line switch it will use it. Beware, though: it generates one test for every postcode, and it will take a while. Right now there are about 600 failing tests against this dataset. I'm working on it.
+
 
 ## Notes.
 You can also [analyse this regex](https://regex101.com/r/yD1lU1/3).
