@@ -1,3 +1,7 @@
+import pytest
+
+import os.path
+
 from collections import Iterable
 from functools import partial
 
@@ -67,6 +71,18 @@ def pytest_generate_tests(metafunc):
             ids=list(gen.generate_ids()),
             scope='class'
         )
+
+
+@pytest.mark.hookwrapper
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    report = outcome.get_result()
+
+    # Write a list of failing tests to a file.
+    if report.when == "call" and report.outcome == "failed":
+        mode = "a" if os.path.exists("failures.list") else "w"
+        with open("failures.list", mode) as f:
+            f.write(report.nodeid + "\n")
 
 
 def pytest_addoption(parser):
