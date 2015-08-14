@@ -12,8 +12,8 @@ def get_postcodes(datadir):
 
 
 if __name__ == '__main__':
-    datadir = 'data/Data/CSV/'
+    datadir = 'tests/data/Data/CSV/'
     postcodes = list(get_postcodes(datadir))
 
-    with open("OSpostcodes.db", "wb") as f:
+    with open("tests/OSpostcodes.db", "wb") as f:
         pickle.dump(postcodes, f, pickle.HIGHEST_PROTOCOL)

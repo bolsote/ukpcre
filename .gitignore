@@ -1,6 +1,10 @@
+.*.sw?
 ve/
 tests/data/
 *.db
+failures.list
+test.xml
+lint.out
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
