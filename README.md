@@ -11,14 +11,14 @@ The regular expression is based both on [official versions](https://www.gov.uk/g
 	(
 		(?P<first>
 			((?![qvx])[a-z][a-hk-y]?[0-9][0-9]?) |       # First part: A1, AB1, A12, AB12.
-			((?![qvx])[a-z][0-9][a-hjkstuw]) |           # First part: A1B.
+			((?![qvx])[a-z][0-9][a-hjkpstuw]) |           # First part: A1B.
 			((?![qvx])[a-z][a-hk-y][0-9][abehmnprvwxy])  # First part: AB1C.
 		)\s*(?P<second>[0-9](?![cikmov])[a-z]{2})?       # Second part.
 	)
 )$
 ```
 
-It can be divided in three distinct blocks. In all cases, both uppercase and lowercase letters are accepted, and spaces are optional where relevant.
+It can be divided into three distinct blocks. In all cases, both uppercase and lowercase letters are accepted, and spaces are optional where relevant.
 
 ### Girobank postcode.
 The first group matches the Girobank postcode (GIR 0AA).
@@ -32,7 +32,7 @@ The first part of a postcode is covered by two distinct cases:
 Three possibilities are covered via sub-expressions:
 
 1. Postcodes in the form A1, AB1, A12 or AB12: `(?![qvx])[a-z][a-hk-y]?[0-9][0-9]?`.
-2. Postcodes in the form A1B: `(?![qvx])[a-z][0-9][a-hjkstuw]`.
+2. Postcodes in the form A1B: `(?![qvx])[a-z][0-9][a-hjkpstuw]`.
 3. Postcodes in the form AB1C: `(?![qvx])[a-z][a-hk-y][0-9][abehmnprvwxy]`.
 
 In all cases, the corresponding alphabetic character classes include the appropriate exclusions, as defined in the relevant [Wikipedia article](https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom#Validation).
@@ -64,4 +64,4 @@ A `tasks.py` file is included, which uses the facilities provided by [Invoke](ht
 
 
 ## Notes.
-You can also [analyse this regex](https://regex101.com/r/yD1lU1/3).
+You can also [analyse this regex](https://regex101.com/r/yD1lU1/).
