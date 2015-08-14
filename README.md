@@ -38,7 +38,7 @@ Three possibilities are covered via sub-expressions:
 In all cases, the corresponding alphabetic character classes include the appropriate exclusions, as defined in the relevant [Wikipedia article](https://en.wikipedia.org/wiki/Postcodes_in_the_United_Kingdom#Validation).
 
 ### Second section.
-The final section of the full postcode sub-expression, `([0-9](?![cikmov])[a-z]{2})`, matches the second half of a postcode, with or without leading whitespaces (` *`). It starts by a number, followed by two letters, excluding the characters `[cikmov]`.
+The final section of the full postcode sub-expression, `([0-9](?![cikmov])[a-z]{2})`, matches the second half of a postcode, with or without leading whitespaces (`\s*`). It starts by a number, followed by two letters, excluding the characters `[cikmov]`.
 
 
 ## Testing.
