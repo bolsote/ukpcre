@@ -6,3 +6,8 @@ python:
     - "pypy3"
 install: "pip install -r requirements.txt"
 script: python -m pytest
+notifications:
+    email:
+        on_success: change
+        on_failure: always
+    slack: marshland:whhps9g7T0jujrU9PCK3ojGP
