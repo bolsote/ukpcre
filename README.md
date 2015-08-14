@@ -49,7 +49,7 @@ For every failure a line is generated in a file called `failures.list`, includin
 ### Testing against OS database.
 A script and a test generator is provided for testing against the Ordnance Survey Code-Point Open postcode database. This database can't be provided with the code, though, but can be obtained through the [official channels](https://www.ordnancesurvey.co.uk/opendatadownload/products.html).
 
-Once the database has been obtained, the ZIP file can be decompressed under the `tests/data/` directory, and the script `tests/prepare_os_data.py` will generate the postcode database for you. If the test suite is run using the `--osdb` command line switch it will use it. Beware, though: it generates one test for every postcode, and it will take a while. Right now there are about 600 failing tests against this dataset. I'm working on it.
+Once the database has been obtained, the ZIP file can be decompressed under the `tests/data/` directory, and the script `tests/prepare_os_data.py` will generate the postcode database for you. If the test suite is run using the `--osdb` command line switch it will use it. Beware, though: it generates one test for every postcode, and it will take a while.
 
 
 ## Invoke tasks.
