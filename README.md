@@ -1,4 +1,6 @@
 # ukpcre
+[![Build Status](https://travis-ci.org/bolsote/ukpcre.svg?branch=master)](https://travis-ci.org/bolsote/ukpcre)
+
 Flexible regular expression to detect full or partial UK postcodes.
 
 
