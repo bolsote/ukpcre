@@ -26,6 +26,7 @@ class TestFullPostcodes(ValidPostcodeTests):
     postcodes = (
         ("W1 6LS", "W1 6LS", "W1", "6LS",),
         ("N1C 4UQ", "N1C 4UQ", "N1C", "4UQ",),
+        ("N1P 4AA", "N1P 4AA", "N1P", "4AA",),
         ("N17 6LA", "N17 6LA", "N17", "6LA",),
         ("SW8 1UQ", "SW8 1UQ", "SW8", "1UQ",),
         ("CW3 9SS", "CW3 9SS", "CW3", "9SS",),
@@ -40,6 +41,7 @@ class TestPartialPostcodes(ValidPostcodeTests):
     postcodes = (
         ("W1", "W1", "W1", None,),
         ("N1C", "N1C", "N1C", None,),
+        ("N1P", "N1P", "N1P", None,),
         ("N17", "N17", "N17", None,),
         ("SW8", "SW8", "SW8", None,),
         ("CW3", "CW3", "CW3", None,),
