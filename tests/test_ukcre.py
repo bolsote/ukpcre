@@ -59,7 +59,6 @@ class TestInvalidPostcode:
         ("1", None, None, None),
         ("-", None, None, None),
         ("ñ", None, None, None),
-        ("W1", None, None, None),
         ("QA12", None, None, None,),
         ("AJ12", None, None, None,),
         ("Q1A", None, None, None,),
